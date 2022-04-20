@@ -1,5 +1,5 @@
 node_modules
 dist
 .env
-#src/controllers/routes.ts
+src/controllers/routes.ts
 src/controllers/swagger.json
