@@ -1,0 +1,10 @@
+{
+  "exec": "NODE_ENV=development ts-node -r dotenv/config src/index.ts",
+  "watch": [
+    "src"
+  ],
+  "ignore": [
+    "src/controllers/routes.ts"
+  ],
+  "ext": "ts"
+}

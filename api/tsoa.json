@@ -1,0 +1,20 @@
+{
+    "entryFile": "src/app.ts",
+    "noImplicitAdditionalProperties": "throw-on-extras",
+    "controllerPathGlobs": ["src/controllers/*Controller.ts"],
+    "spec": {
+      "basePath": "/api",
+      "outputDirectory": "build",
+      "specVersion": 3,
+      "securityDefinitions": {
+        "jwt": {
+          "type": "http",
+          "scheme": "bearer"
+        }
+      }
+    },
+    "routes": {
+      "basePath": "/api",
+      "routesDir": "src/controllers"
+    }
+  }
