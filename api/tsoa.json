@@ -4,7 +4,7 @@
     "controllerPathGlobs": ["src/controllers/*Controller.ts"],
     "spec": {
       "basePath": "/api",
-      "outputDirectory": "build",
+      "outputDirectory": "src/controllers",
       "specVersion": 3,
       "securityDefinitions": {
         "jwt": {
