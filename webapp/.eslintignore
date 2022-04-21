@@ -1,0 +1,7 @@
+# Ignore assets folder
+src/assets/**/*
+
+# Ignore other file types
+**/*.json
+**/*.scss
+**/*.md
