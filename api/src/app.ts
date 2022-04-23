@@ -1,9 +1,13 @@
 import express, { Response as ExResponse, Request as ExRequest } from 'express';
 import bodyParser from 'body-parser';
-import swaggerUi from 'swagger-ui-express';
+import cors from 'cors';
+import path from 'path';
+import { registerRawRoutes } from './routes';
 import { RegisterRoutes } from './controllers/routes';
 
 export const app = express();
+
+app.use(cors());
 
 app.use(
   bodyParser.urlencoded({
@@ -11,9 +15,7 @@ app.use(
   }),
 );
 
-app.use('/docs', swaggerUi.serve, async (_req: ExRequest, res: ExResponse) => res.send(
-  swaggerUi.generateHTML(await import('./controllers/swagger.json')),
-));
+registerRawRoutes(app);
 
 app.use(bodyParser.json());
 

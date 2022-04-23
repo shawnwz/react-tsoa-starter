@@ -14,6 +14,4 @@ function getEnvVar(
   return value;
 }
 
-
-
 export const port: number = parseInt(getEnvVar('PORT', true, '8181'), 10);
