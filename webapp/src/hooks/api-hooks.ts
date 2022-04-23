@@ -1,4 +1,4 @@
-import { User } from '@react-tsoa-starter/types';
+import { User } from '@react-tsoa-starter/shared-types';
 
 /**
  * UTILS

@@ -1,7 +1,5 @@
-import { app } from "./app";
+import { app } from './app';
 
-import { port } from "./variables"
+import { port } from './variables';
 
-app.listen(port, () =>
-  console.log(`Example app listening at http://localhost:${port}`)
-);
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
