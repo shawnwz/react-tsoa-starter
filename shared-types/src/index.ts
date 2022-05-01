@@ -1,11 +1,14 @@
 export interface User {
-  email: string;
   id: string;
+  email: string;
+  name? : string;
+  avatar: string;
   status?: 'Happy' | 'Sad';
   phoneNumbers: string[];
   language: LanguageCode;
-  name? : string;
 }
+
+export type UserCreationParams = Pick<User, 'email' | 'name' | 'phoneNumbers'>;
 
 export type LanguageCode =
     | 'ar'

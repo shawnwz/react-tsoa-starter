@@ -8,17 +8,17 @@ import {
   Route,
   SuccessResponse,
 } from 'tsoa';
-import { User } from '../users/user';
-import { UsersService, UserCreationParams } from '../users/usersService';
+import { User, UserCreationParams } from '@react-tsoa-starter/shared-types';
+import { RemoteUserService } from '../users/RemoteUserService';
 
 @Route('users')
 export class UsersController extends Controller {
   @Get('{userId}')
   public async getUser(
-    @Path() userId: number,
+    @Path() userId: string,
       @Query() name?: string,
   ): Promise<User> {
-    return new UsersService().get(userId, name);
+    return new RemoteUserService().getUserById(userId);
   }
 
   @SuccessResponse('201', 'Created') // Custom success response
@@ -27,6 +27,6 @@ export class UsersController extends Controller {
     @Body() requestBody: UserCreationParams,
   ): Promise<void> {
     this.setStatus(201); // set return status 201
-    new UsersService().create(requestBody);
+    new RemoteUserService().registerUser(requestBody);
   }
 }
