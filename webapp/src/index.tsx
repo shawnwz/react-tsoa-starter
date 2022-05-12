@@ -6,6 +6,11 @@ import { ChakraProvider } from '@chakra-ui/react';
 import './styles/index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { worker } from './mocks/browser';
+
+if (process.env.NODE_ENV === 'development' && process.env.REACT_APP_USE_MOCK === 'true') {
+  worker.start();
+}
 
 const queryClient = new QueryClient();
 
